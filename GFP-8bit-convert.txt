@@ -1,0 +1,17 @@
+// Converts a directory of images to 8 bit, applies a green LUT
+// then saves to a target directory.
+// Useful for batch processing images taken with a cell culture microscope.
+
+source_dir = getDirectory("Source Directory");
+target_dir = getDirectory("Target Directory");
+if (File.exists(source_dir) && File.exists(target_dir)) {
+    setBatchMode(true);
+    list = getFileList(source_dir);
+    for (i=0; i<list.length; i++) {
+      open(source_dir + "/" + list[i]);
+      run("Green");
+	    run("8-bit");
+	    saveAs("Tiff", target_dir/list[i]);
+	    close();
+    }
+}
