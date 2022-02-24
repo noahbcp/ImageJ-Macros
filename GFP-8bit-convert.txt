@@ -1,5 +1,4 @@
-// Converts a directory of images to 8 bit, applies a green LUT
-// then saves to a target directory.
+// Converts a directory of images to 8 bit, applies a green LUT then saves to a target directory.
 // Useful for batch processing images taken with a cell culture microscope.
 
 source_dir = getDirectory("Source Directory");
