@@ -11,7 +11,7 @@ if (File.exists(source_dir) && File.exists(target_dir)) {
       open(source_dir + "/" + list[i]);
       run("Green");
 	    run("8-bit");
-	    saveAs("Tiff", target_dir/list[i]);
+	    saveAs("Tiff", target_dir + "/" + list[i]);
 	    close();
     }
 }
